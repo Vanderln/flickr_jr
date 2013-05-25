@@ -1,0 +1,13 @@
+<h1><%=user.username%>'s Album Page</h1>
+<% if albums%>
+<%albums.each do |album|%>
+<h2><a href="/user/<%=user.id%>/albums/<%=album.id%>"><%=album.title%></a></h2>
+<%end%>
+<%else%>
+<h5> No albums yet </h5>
+
+<%end%>
+
+
+
+

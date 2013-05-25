@@ -1,0 +1,19 @@
+<h5>Add photos to <%=album.title%> album here!</h5>
+<% if current_user.id = album.user_id %>
+
+<form id="photo_upload" action="/user/<%=current_user.id%>/albums/<%=album.id%>/add_photo" method="Post" enctype="multipart/form-data">
+  <input type="text" name="caption" placeholder="photo caption">
+  <br>
+  <input type="file" name="image"> Image
+  <br>
+  <input type="submit" name="submit">
+
+</form>
+<form id="photo_finish" action="/user/<%=current_user.id%>/albums/<%=album.id%>/photo_finish" method="Post">
+  <input type="submit" name="Finish" value="Finished adding photos">
+</form>
+<%else%>
+<h3>You need to be logged in to add photos!</h3>
+<a href="/users/<%=current_user.id%>/albums">Go to the albums page</a>
+
+<% end %>

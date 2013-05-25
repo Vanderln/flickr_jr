@@ -1,0 +1,12 @@
+<h1><%=photo.caption%></h1>
+<div><img src="<%=photo.image%>"</img></div>
+
+
+
+<a href='/user/<%=photo.user_id%>/albums/<%=album.id%>'>Back to <%=album.title%></a> 
+<br>
+
+<%if current_user.id == photo.user_id %>
+<a href='/user/<%=current_user.id%>/albums/<%=album.id%>/add_photos'>Add a new photo to <%=album.title%></a>
+<%end%>
+
