@@ -13,6 +13,7 @@ Dir[APP_ROOT.join('app', 'models', '*.rb')].each do |model_file|
   autoload ActiveSupport::Inflector.camelize(filename), model_file
 end
 
+
 # We have to do this in case we have models that inherit from each other.
 # If model Student inherits from model Person and app/models/student.rb is
 # required first, it will throw an error saying "Person" is undefined.

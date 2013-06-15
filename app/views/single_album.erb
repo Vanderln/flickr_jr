@@ -1,26 +1,14 @@
-<header>
-  <br>
-  <a href="/user/<%=current_user.id%>/albums/<%=album.id%>/add_album">Add a new album</a>
-  <br>
-  <a href="/user/<%=current_user.id%>/albums/<%=album.id%>/add_photos">Add a new photo to this album</a>
-  <br>
-  <a href="/all_albums">Go to Main Albums Page</a>
-</header>
-
-<h1><%=album.title%> Album </h1>
-<% if album%>
-<%album.photos.each do |photo|%>
-
-<h2><a href="/user/<%=current_user.id%>/albums/<%=album.id%>/photos/<%=photo.id%>"><%=photo.caption%></a></h2>
-<ul>
-<li><img src="<%=photo.image%>"</img></li>
-</ul>
-<%end%>
-<%else%>
-<h5> No Photos yet </h5>
-
-<%end%>
-<footer>
-  
-</footer>
-
+<div class="container">
+  <h1><%=@album.title%> Album</h1>
+  <h3><%=@album.description%></h3>
+  <%if current_user.id == @album.user_id%>
+  <h4><a href="/upload/<%=@album.id%>">Upload photos to this album!</a></h4>
+  <%end%>
+  <h4><a href="/carousel/<%=@album.id%>">View this album in a carousel!</a></h4>
+  <%@album.photos.each do |photo|%>
+  <ul>
+  <li><img src="<%=photo.file%>"></li>
+  <li><a href="/photos/<%=photo.id%>"><%=photo.description%></a></li>
+  </ul>
+  <%end%>
+</div>

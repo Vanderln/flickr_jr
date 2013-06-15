@@ -1,0 +1,12 @@
+<div class="container">
+  <h3>Are you sure you want to delete this photo?</h3>
+  <h4><%=@photo.description%></h4>
+  <p><img src="<%=@photo.file%>"></p>
+  <form action="/photo_delete/<%=@photo.id%>" method="post">
+    <input type="submit" value="Delete photo">
+  </form>
+  <form action="/photos/<%=@photo.id%>" method="get">
+    <input type="submit" value="Nah, I'll keep it.">
+  </form>
+
+</div>

@@ -29,6 +29,7 @@ APP_NAME = APP_ROOT.basename.to_s
 set :root, APP_ROOT
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'
+require 'mini_magick'
 
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'uploaders', '*.rb')].each { |file| require file }

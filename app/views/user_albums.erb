@@ -1,13 +1,10 @@
-<h1><%=user.username%>'s Album Page</h1>
-<% if albums%>
-<%albums.each do |album|%>
-<h2><a href="/user/<%=user.id%>/albums/<%=album.id%>"><%=album.title%></a></h2>
-<%end%>
-<%else%>
-<h5> No albums yet </h5>
-
-<%end%>
-
-
-
-
+<div class="container">
+  <h1>Welcome to <%=current_user.username%>'s albums page!</h1>
+    <h3>Choose from the albums below</h3>
+    <ul>
+    <%current_user.albums.each do |album|%>
+    
+      <li><a href="/albums/<%=album.id%>"><%=album.title%></a></li>
+      <%end%>
+    </ul>
+</div>

@@ -1,0 +1,18 @@
+<div class="container_car">
+  <div class="carousel_controls">
+    <a href="#" id="previous_frame">&lt;</a>
+    <a href="#" id="next_frame">&gt;</a>
+  </div>
+
+<%@album.photos.each do |photo| %>
+  <div class="carousel">
+    <ul class="frames">
+      <li>
+        <h2><%=photo.description%></h2>
+        <img src="<%=photo.file%>" />
+      </li>
+    </ul>
+  </div>
+ 
+</div> 
+<%end%>

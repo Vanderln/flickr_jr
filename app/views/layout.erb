@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
 <header>
-<%if current_user%>
- <a href='/users/<%=current_user.id%>/albums'>Back to your albums</a>
- <a href="/logout">Logout</a>
- <%end%>
+
+ 
+
   
   </header>
   <!-- 
@@ -18,11 +17,27 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
+   <link rel="stylesheet" href="/css/carousel.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title></title>
+  <div class="nav">
+  
+  <ul>
+    <li><span id="title" ><a href="/"> Welcome to Flickr</a></span></li>
+    <li><a href="/photos/all">All Photos</a></li>
+    <li><a href="/albums/all">All Albums</a></li>
+    <%if logged_in?%>
+    <li><a href="/albums/photos/<%=current_user.id%>">Your Photos</a></li>
+    <li><a href="/users/<%=current_user.id%>/albums">Your Albums</a></li>
+    <li><a href="/users/<%=current_user.id%>/albums">(<%=current_user.username%>)</a></li>
+    <li><a href="/logout">Logout</a></li>
+    <%end%>
+    
+  </ul>
+  </div>
 </head>
 <body>
   <%= yield %>

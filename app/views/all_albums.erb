@@ -1,17 +1,9 @@
-
-<h1>Welcome to Flickr Jr's Album page</h1>
-<h2>Every album for your enjoyment</h2>
-<%albums.each do |album|%>
+<div class ="container">
+  <h1> Here you can view all of our albums</h1>
+  <%@albums.each do |album|%>
   <ul>
-    <li><a href="/user/<%=album.user_id%>/albums/<%=album.id%>"><%=album.title%></a></li>
-  
-  <%album.photos.each do |photo|%>
-  
-    <li><a href="/user/<%=album.user_id%>/albums/<%=album.id%>/photos/<%=photo.id%>"><%=photo.caption%></a>
-      <img src="<%=photo.image%>"</img>    
-    </li>
-  
+    <li><a href="/albums/<%=album.id%>"><%=album.title%></a></li>
+    <li>Owner: <%=album.user.username%>
   </ul>
-
   <%end%>
-  <%end%>
+</div>

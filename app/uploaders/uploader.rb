@@ -1,7 +1,10 @@
 class AvatarUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+  process :resize_to_fill => [400,400]
+
   storage :file
 
   def store_dir
-    "#{APP_ROOT}/public/images/uploads"
+    "photos/"
   end
 end

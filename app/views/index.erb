@@ -1,11 +1,35 @@
 <div class="container">
-  <h1>Welcome to Flickr Jr</h1>
- <form action ="/user/login" method="POST">
- <input type="text" name="username" placeholder="username">
- <input type="password" name="password" placeholder="password">
- <input type="submit" action="/login" >
- <input type="submit" name="guest_login" action="/login" value="Login as a guest"> 
+  
+  <p>Login</p>
+  <form  name="sign_in" action="/login" method="post">
+    <p><label for="username">Username</label>
+    <input type="text" name="username" /></p>
+    <p><label for="password">Password</label>
+    <input type="password" name="password" /></p>
 
-</form>
+    <button id="signin" type="submit">Sign Up</button>
 
+    <ul id="errors_login"></ul>
+  </form>
+</div>
+<div class="container">
+  <p>Create New Account</p>
+  <form  name="sign_up" action="/create_account" method="post">
+    <p><label for="username">Username</label>
+    <input type="text" name="username" /></p>
+    <p><label for="email">Email</label>
+    <input type="text" name="email" /></p>
+    <p><label for="password">Password</label>
+    <input type="password" name="password" /></p>
+
+    <button id= "signup" type="submit">Sign Up</button>
+
+    <ul id="errors_create"></ul>
+  </form>
+</div>
+<div class="container">
+  <p>Login as a Guest</p>
+  <form action ="/login_guest" method="POST">
+   <p><input type="submit" name="create_account" value="Bomb's away!"> </p>
+ </form>
 </div>

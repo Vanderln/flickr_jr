@@ -1,9 +1,66 @@
+html{
+  background-image:url(http://www.wallsoc.com/images/1920x1080/2013/02/06/vintage-camera-myspace-backgrounds-free-.jpeg);
+}
 .container {
   margin: 20px auto;
+  margin-top: 100px;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  
+  border-radius: 20px;
+  background-color: #CCFFFF;
+
 }
 th {
   text-align: left;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.nav {
+  margin-top: 0px;
+  position: fixed;
+  top:0px;
+  margin: 0 auto;
+  height: 70px;
+  width: 100%;
+  display: inline-block;
+  background: skyblue;
+}
+
+.nav ul{
+  font-size: 15px;
+
+}
+
+.nav li{
+  display: inline-block;
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  padding: 30px;
+}
+
+.nav a:hover {
+  text-decoration: none;
+  color: yellow;
+}
+
+#title{
+  font-size: 40px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+

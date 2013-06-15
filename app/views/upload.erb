@@ -1,0 +1,28 @@
+<div class="container">
+  <%if logged_in?%>
+  <%if current_user.id == @album.user_id%>
+  <h1>Upload a photo to <%=@album.title%> here!</h1>
+  <form action="/add_photo" enctype="multipart/form-data" method="post">
+    <input type="text" name="post[description]">
+    <input type="file" name="post[file]">
+    <input type="submit" value="upload!">
+    <input type="hidden" name="post[album_id]" value="<%=@album.id%>">
+    <input type="hidden" name="post[user_id]" value="<%=current_user.id%>">
+  </form>
+</div>
+<div class="container">
+  <%@album.photos.order('created_at DESC').each do |photo|%>
+  <ul>
+    <li><img src="<%=photo.file%>"></li>
+    <li><a href="/photos/<%=photo.id%>"><%=photo.description%></a></li>
+  </ul>
+  <%end%>
+  <%else%>
+  <h1>You don't own this album, so you may not add photos to it!</h1>
+  <p><a href="/albums/<%=@album.id%>"></a></p>
+  <%end%>
+  <%else%>
+  <h1>You are not logged in, you can't upload photos</h1>
+  <p><a href="/">Homepage</a></p>
+  <%end%>
+</div>

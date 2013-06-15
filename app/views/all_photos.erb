@@ -1,0 +1,11 @@
+<div class="container">
+  <h1> Flickr photo collection!</h1>
+  <%@photos.each do |photo|%>
+    <ul>
+      <li><img src="<%=photo.file%>"></li>
+      <li><a href="/photos/<%=photo.id%>">Description: <%=photo.description%></a></li>
+      <li><a href="/albums/<%=photo.album_id%>">Album: <%=photo.album.title%></a></li>
+      <li>Owner: <%=photo.user.username%></li>
+    </ul>
+    <%end%>
+</div>
