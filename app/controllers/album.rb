@@ -13,7 +13,7 @@ get '/albums/:album_id' do
 end
 
 get '/photos/all' do
-  @photos = Photo.order('created DESC')
+  @photos = Photo.order('created_at DESC')
   erb :all_photos
 end
 

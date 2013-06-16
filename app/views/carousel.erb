@@ -3,16 +3,17 @@
     <a href="#" id="previous_frame">&lt;</a>
     <a href="#" id="next_frame">&gt;</a>
   </div>
-
-<%@album.photos.each do |photo| %>
-  <div class="carousel">
+<div class="carousel">
     <ul class="frames">
+<%@album.photos.each do |photo| %>
+  
       <li>
         <h2><%=photo.description%></h2>
         <img src="<%=photo.file%>" />
       </li>
+      <%end%>
     </ul>
   </div>
  
 </div> 
-<%end%>
+

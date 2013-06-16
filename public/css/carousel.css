@@ -1,7 +1,9 @@
 .container_car {
-  width: 360px;
-  height: 228px;
+  width: 600px;
+  height: 400px;
   margin: 0 auto;
+  margin-top: 200px;
+
 }
 .carousel{
   overflow:hidden;
@@ -40,9 +42,9 @@
   font-family: monospace;
   text-decoration: none;
   position: absolute;
-  margin-top: 99px;
+  margin-top: 250px;
   width: 30px;
-  line-height: 30px;
+  line-height: 50px;
   background-color: #eee;
   border: 1px solid #ddd;
   border-radius: 30px;
@@ -54,5 +56,5 @@ a#previous_frame {
   margin-left: -50px;
 }
 a#next_frame {
-  margin-left: 380px;
+  margin-left: 620px;
 }

@@ -53,20 +53,35 @@ $(document).ready(function() {
   });
 //form validations end
 //carousel animations
+  var numSlides = $('.frames li').length;
+    var newWidth = numSlides * 100;
+    var liWidth = 100/numSlides;
+    var aniWidth = (numSlides - 1)*100;
+    $('.frames').css({ "width" : " " + newWidth + "%"});
+    $('.frames > li').css({ "width" : " " + liWidth + "%"}) 
   $('#next_frame').click(function(){
     
-    if ($('.frames').css("right") == "200%") {
+       
+    if ($('.frames').css("right") == ""+aniWidth+"%") {
       $('.frames').animate({right:'0%'}, 100);
     } else {
       $('.frames').animate({right:'+=100%'}, 1000)};
   });
 
   $('#previous_frame').click(function(){
+   
     
     if ($('.frames').css("right") == "0%"){
-      $('.frames').animate({right:'200%'}, 1000);
+      $('.frames').animate({right:''+aniWidth+'%'}, 100);
     }
     else {
-      $('.frames').animate({right:'-=100%'}, 150)};
+      $('.frames').animate({right:'-=100%'}, 1000)};
   });
 });
+
+
+
+
+
+
+
